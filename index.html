@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="./lib/bootstrap.min.css">
+</head>
+<body>
+<div class="container" ng-app="autoCompleteApp" ng-controller="autoCompleteAppCtrl">
+  <form>
+  <h2>Type to know the results</h2>
+	<div class="row">		
+		<div class="col-sm-4">
+			<input type="text" name="country" id="country" ng-model="country" ng-keyup="complete(country)" class="form-control" />
+			<ul class="list-group" ng-model="hideList" ng-hide="hideList">
+				<li class="list-group-item" ng-repeat="country in selectedCountry" ng-click="assignSelected(country)">{{country}}</li>
+			</ul>
+		</div>
+	 </div>
+  </form>
+</div>
+
+<script src="./lib/angular.min.js"></script>
+<!-- jQuery library -->
+<script src="./lib/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="./lib/bootstrap.min.js"></script>
+<script src="./js/app.js"></script>
+
+</body>
+</html>
