@@ -29,6 +29,12 @@
 			$scope.country = selectedCountry;
 		}
 		
+		$scope.updateCountryList = function(e, listData){
+			if(e.key === "Enter" && $scope.countryList.indexOf(listData) == -1){
+				$scope.countryList[$scope.countryList.length]=listData;
+			}
+		}
+		
 		$scope.hidelist = function(){
 			$scope.hideList = true;
 		}
